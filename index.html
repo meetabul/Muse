@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Abul Hasan — Quality Engineer & Assurance</title>
+<meta name="description" content="Mohamed Abul Hasan — Quality Engineer & Assurance, Chennai. A portfolio you scroll through with me.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><div class="loader-name" id="loaderName">Mohamed Abul Hasan</div><div class="loader-bar"><span id="loaderFill"></span></div><div class="loader-pct" id="loaderPct">0%</div></div>
+
+<!-- Fixed film stage: the film never plays on its own, your scroll drives it. -->
+<div class="stage"><video id="film" muted playsinline preload="auto" poster="media/poster.jpg" src="media/film.mp4"></video><div class="vignette"></div></div>
+
+<header class="topbar">
+  <a class="brand" href="#intro" data-goto="0">Mohamed Abul Hasan</a>
+  <nav>
+    <a href="#intro" data-goto="0">Home</a>
+    <a href="#about" data-goto="1">About</a>
+    <a href="#work" data-goto="2">Work</a>
+    <a href="#skills" data-goto="3">Skills</a>
+    <a href="#resume" data-goto="4">Résumé</a>
+    <a href="#contact" data-goto="5">Contact</a>
+  </nav>
+</header>
+
+<div class="progress"><span id="progressFill"></span></div>
+<div class="scroll-hint" id="scrollHint">Scroll down to begin ↓</div>
+
+<main>
+  <!-- Each section fades in on its film-time window (seconds, retimed
+       2026-11-10 to the CapCut-edited 44.71s film):
+       Intro 3.0–8.2 (pause 7.0) · About 10.0–15.8 (14.5) · Work 24.5–30.5 (28.0)
+       Skills 31.5–38.5 (37.0) · Résumé 39.0–42.5 (41.0) · Contact 42.5–44.71 (44.0) -->
+  <section class="panel" id="intro" data-start="3.0" data-end="8.2">
+    <p class="eyebrow">01 — Intro</p>
+    <h1><span>Hi, I'm</span><br><span class="name" id="heroName">Mohamed Abul Hasan</span></h1>
+    <p class="role" id="heroRole">Quality Engineer & Assurance</p>
+    <p class="status" id="heroStatus">Chennai · Not open to work</p>
+  </section>
+
+  <section class="panel" id="about" data-start="10.0" data-end="15.8">
+    <p class="eyebrow">02 — About</p>
+    <h2 id="aboutTitle">I make sure software works — every time.</h2>
+    <p class="body" id="aboutText">I'm a Quality Engineer &amp; Assurance professional based in Chennai, with 10+ years of experience in total and 5+ years in QA / IT. I test software end to end — manual and automation — so teams can ship with confidence.</p>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="panel spacer" id="transition" data-start="15.8" data-end="24.5" aria-hidden="true"></section>
+
+  <section class="panel" id="work" data-start="24.5" data-end="30.5">
+    <p class="eyebrow">03 — Work</p>
+    <h2>Selected work</h2>
+    <div class="cards" id="projects"></div>
+  </section>
+
+  <section class="panel" id="skills" data-start="31.5" data-end="38.5">
+    <p class="eyebrow">04 — Skills</p>
+    <h2>What I work with</h2>
+    <div class="chips" id="skills"></div>
+  </section>
+
+  <section class="panel" id="resume" data-start="39.0" data-end="42.5">
+    <p class="eyebrow">05 — Résumé</p>
+    <h2>Résumé</h2>
+    <p class="body"><strong>Experience</strong><br><span id="experience"></span></p>
+    <p class="body"><strong>Education</strong><br><span id="education"></span></p>
+    <a class="btn" id="resumeBtn" href="media/resume.pdf" download>Download résumé ↓</a>
+  </section>
+
+  <section class="panel" id="contact" data-start="42.5" data-end="44.71">
+    <p class="eyebrow">06 — Contact</p>
+    <h2>Let's build something together.</h2>
+    <a class="email" id="emailLink" href="mailto:meetabulhasan@gmail.com">meetabulhasan@gmail.com</a>
+    <div class="socials" id="socials"></div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+<!-- FIX 2026-11-11 — loader trap: if app.js fails or dies before its
+     own 8s fallback runs, the loader stays at 0% forever and the whole
+     site is black. This inline fallback hides the loader after 8s even
+     if app.js never runs at all. -->
+<script>setTimeout(function(){var l=document.getElementById('loader');if(l){l.classList.add('done');setTimeout(function(){l.remove();},600);}},8000);</script>
+</body>
+</html>
